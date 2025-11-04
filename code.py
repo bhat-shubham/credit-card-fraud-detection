@@ -1,8 +1,8 @@
 # -- Imports --
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
+import numpy as np #for numerical computations (e.g., array operations).
+import pandas as pd #for data handling, loading CSV, and data manipulation.
+import matplotlib.pyplot as plt #for plotting graphs.
+import seaborn as sns #for more advanced, pretty statistical plots.
 
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
@@ -20,3 +20,32 @@ print(df.head())
 print(df['Class'].value_counts())
 print(df['Amount'].describe())
 
+# -- 2. Data Exploration --
+sns.countplot(x='Class', data=df)
+plt.title('Fraud vs Non-fraud Transactions')
+plt.show()# Basic count plot
+sns.countplot(x='Class', data=df)
+plt.title('Fraud vs Non-fraud Transactions')
+plt.show()
+
+# --- Improved Plot 1: Log scale with count + percentage annotations ---
+class_counts = df['Class'].value_counts()
+total = len(df)
+
+plt.figure(figsize=(6,4))
+ax = sns.countplot(x='Class', data=df, palette='viridis')
+plt.yscale('log')
+plt.title('Fraud vs Non-fraud Transactions (Log Scale)', fontsize=12, fontweight='bold')
+plt.xlabel('Class (0 = Non-fraud, 1 = Fraud)', fontsize=10)
+plt.ylabel('Count (log scale)', fontsize=10)
+
+# Annotate counts and percentages
+for p in ax.patches:
+    count = int(p.get_height())
+    percentage = 100 * count / total
+    ax.annotate(f'{count}\n({percentage:.3f}%)',
+                (p.get_x() + p.get_width() / 2., p.get_height()),
+                ha='center', va='bottom', fontsize=9, color='black')
+
+plt.tight_layout()
+plt.show()
