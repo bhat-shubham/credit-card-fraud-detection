@@ -4,9 +4,9 @@ import pandas as pd #for data handling, loading CSV, and data manipulation.
 import matplotlib.pyplot as plt #for plotting graphs.
 import seaborn as sns #for more advanced, pretty statistical plots.
 
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler
-from sklearn.metrics import roc_auc_score, roc_curve, classification_report, confusion_matrix
+from sklearn.model_selection import train_test_split #splits dataset into training and testing sets.
+from sklearn.preprocessing import StandardScaler #standardizes numerical features (mean=0, std=1).
+from sklearn.metrics import roc_auc_score, roc_curve, classification_report, confusion_matrix # for model evaluation metrics
 
 from sklearn.linear_model import LogisticRegression
 from sklearn.tree import DecisionTreeClassifier
@@ -15,10 +15,10 @@ from sklearn.neural_network import MLPClassifier
 
 # -- 1. Load dataset --
 df = pd.read_csv('creditcard.csv')
-print(df.shape)
-print(df.head())
-print(df['Class'].value_counts())
-print(df['Amount'].describe())
+print(df.shape) #shows number of rows and columns.
+print(df.head()) #displays the first 5 rows.
+print(df['Class'].value_counts()) #shows the count of fraudulent (1) and non-fraudulent (0) transactions — helps see class imbalance.
+print(df['Amount'].describe()) #gives summary statistics for the transaction amounts (min, max, mean, std).
 
 # -- 2. Data Exploration --
 sns.countplot(x='Class', data=df)
