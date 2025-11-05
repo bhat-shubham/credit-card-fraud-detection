@@ -64,7 +64,7 @@ y = df2['Class']
 
 # -- 5. Train-Test Split --
 X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.20, random_state=123, stratify=y)
+    X, y, test_size=0.20, random_state=123, stratify=y) #Splits data into training (80%) and testing (20%) sets.
 print(X_train.shape, X_test.shape)
 
 
