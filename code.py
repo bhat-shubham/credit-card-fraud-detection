@@ -86,3 +86,8 @@ plt.show()
 # -- 7. Decision Tree --
 dt = DecisionTreeClassifier(random_state=123)
 dt.fit(X_train, y_train)
+y_pred_dt = dt.predict(X_test)
+y_proba_dt = dt.predict_proba(X_test)[:,1]
+auc_dt = roc_auc_score(y_test, y_proba_dt)
+print("Decision Tree AUC:", auc_dt)
+print(classification_report(y_test, y_pred_dt))
