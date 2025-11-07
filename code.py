@@ -83,6 +83,11 @@ plt.title('ROC Curve')
 plt.legend()
 plt.show()
 
+#Plots the ROC Curve.
+#X-axis → False Positive Rate (1 – specificity)
+#Y-axis → True Positive Rate (sensitivity)
+#Diagonal line = random guessing.
+
 # -- 7. Decision Tree --
 dt = DecisionTreeClassifier(random_state=123)
 dt.fit(X_train, y_train)
