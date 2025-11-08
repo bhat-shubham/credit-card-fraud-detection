@@ -112,3 +112,8 @@ plt.ylabel('True Positive Rate')
 plt.title('ROC – Decision Tree')
 plt.legend()
 plt.show()
+
+# -- 8. Artificial Neural Network (MLPClassifier) --
+mlp = MLPClassifier(hidden_layer_sizes=(30,15), activation='relu', solver='adam', random_state=123, max_iter=200)
+
+
