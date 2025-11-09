@@ -146,3 +146,19 @@ gb = HistGradientBoostingClassifier(
 )
 # Train the model
 gb.fit(X_train, y_train)
+# Predict class labels and probabilities
+y_pred_gb = gb.predict(X_test)
+y_proba_gb = gb.predict_proba(X_test)[:, 1]
+# Evaluate model performance
+auc_gb = roc_auc_score(y_test, y_proba_gb)
+print("HistGradientBoosting AUC:", auc_gb)
+print(classification_report(y_test, y_pred_gb))
+# Plot ROC Curve
+fpr_gb, tpr_gb, _ = roc_curve(y_test, y_proba_gb)
+plt.plot(fpr_gb, tpr_gb, label=f'HistGB (AUC = {auc_gb:.3f})')
+plt.plot([0, 1], [0, 1], 'k--')
+plt.xlabel('False Positive Rate')
+plt.ylabel('True Positive Rate')
+plt.title('ROC – HistGradientBoosting Classifier')
+plt.legend()
+plt.show()
