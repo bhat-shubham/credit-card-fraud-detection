@@ -135,3 +135,7 @@ plt.title('ROC – MLP Classifier')
 plt.legend()
 plt.show()
 
+# -- 9. Gradient Boosting Classifier --
+gb = GradientBoostingClassifier(n_estimators=500, learning_rate=0.01, max_depth=3, random_state=123)
+
+
