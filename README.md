@@ -50,7 +50,7 @@ print(df['Amount'].describe())
 
 ### **Fraud vs Non-Fraud Visualization**
 
-![Fraud vs Non-Fraud (Log Scale)](C:\credit-card-fraud-detection\images\sec1a.png)
+![Fraud vs Non-Fraud (Log Scale)](.\images\section1b.png)
 
 **Interpretation:**
 
