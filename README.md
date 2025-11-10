@@ -52,8 +52,6 @@ print(df['Amount'].describe())
 
 ![Fraud vs Non-Fraud (Log Scale)](C:\credit-card-fraud-detection\images\sec1a.png)
 
-(C:\credit-card-fraud-detection\images\section 1b.png)
-
 **Interpretation:**
 
 * 99.827% of transactions are **legitimate**, only 0.173% are **fraudulent**.
