@@ -61,9 +61,7 @@ print(df['Amount'].describe())
 
 ### **Transaction Amount Distribution**
 
-![Transaction Amount Distribution]
-
-C:\credit-card-fraud-detection\images\histogram plot.png
+![Transaction Amount Distribution](https://github.com/Charithanl/credit-card-fraud-detection/blob/main/images/histogram-plot.png)
 
 **Insights:**
 
@@ -114,9 +112,7 @@ X_test: (56,962, 29)
 
 ## 🧮 **Section 6 – Logistic Regression Model**
 
-![ROC – Logistic Regression]
-
-C:\credit-card-fraud-detection\images\Lr PLOT.png
+![ROC – Logistic Regression](https://github.com/Charithanl/credit-card-fraud-detection/blob/main/images/Lr-PLOT.png)
 
 **Metrics:**
 
