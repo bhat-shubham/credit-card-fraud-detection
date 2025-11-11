@@ -21,7 +21,16 @@ It leverages the popular **Credit Card Fraud Detection Dataset** (European trans
 
 ## 🧾 **Section 1 – Load Dataset**
 
-**Code Summary:**
+Perfect 👏 — this is a **great dataset summary section** to include in your README.
+Let’s turn that raw output into a **clean, professional Markdown format** (so it looks great on GitHub, Medium, or any report).
+
+Here’s the final version you can copy directly into your `README.md` 👇
+
+---
+
+##  **Section 1 – Load Dataset**
+
+### 📘 Code Used
 
 ```python
 df = pd.read_csv('creditcard.csv')
@@ -31,55 +40,66 @@ print(df['Class'].value_counts())
 print(df['Amount'].describe())
 ```
 
-**Output Overview:**
+---
 
-(284807, 31)
-   Time        V1        V2        V3        V4        V5        V6        V7  \
-0   0.0 -1.359807 -0.072781  2.536347  1.378155 -0.338321  0.462388  0.239599   
-1   0.0  1.191857  0.266151  0.166480  0.448154  0.060018 -0.082361 -0.078803   
-2   1.0 -1.358354 -1.340163  1.773209  0.379780 -0.503198  1.800499  0.791461   
-3   1.0 -0.966272 -0.185226  1.792993 -0.863291 -0.010309  1.247203  0.237609   
-4   2.0 -1.158233  0.877737  1.548718  0.403034 -0.407193  0.095921  0.592941   
+### 📊 **Dataset Shape**
 
-         V8        V9  ...       V21       V22       V23       V24       V25  \
-0  0.098698  0.363787  ... -0.018307  0.277838 -0.110474  0.066928  0.128539   
-1  0.085102 -0.255425  ... -0.225775 -0.638672  0.101288 -0.339846  0.167170   
-2  0.247676 -1.514654  ...  0.247998  0.771679  0.909412 -0.689281 -0.327642   
-3  0.377436 -1.387024  ... -0.108300  0.005274 -0.190321 -1.175575  0.647376   
-4 -0.270533  0.817739  ... -0.009431  0.798278 -0.137458  0.141267 -0.206010   
+| Rows        | Columns |
+| ----------- | ------- |
+| **284,807** | **31**  |
 
-        V26       V27       V28  Amount  Class  
-0 -0.189115  0.133558 -0.021053  149.62      0  
-1  0.125895 -0.008983  0.014724    2.69      0  
-2 -0.139097 -0.055353 -0.059752  378.66      0  
-3 -0.221929  0.062723  0.061458  123.50      0  
-4  0.502292  0.219422  0.215153   69.99      0  
+This means the dataset contains **284,807 transactions** with **31 features**, including anonymized PCA-transformed variables (`V1–V28`), `Amount`, `Time`, and the target variable `Class`.
 
-[5 rows x 31 columns]
-Class
-0    284315
-1       492
-Name: count, dtype: int64
-count    284807.000000
-mean         88.349619
-std         250.120109
-min           0.000000
-25%           5.600000
-50%          22.000000
-75%          77.165000
-max       25691.160000
-Name: Amount, dtype: float64
+---
 
-* Shape: `(284807, 31)`
-* Legitimate transactions: `284,315`
-* Fraudulent transactions: `492`
-* Average amount: `€88.35` (max ≈ €25,691)
+### 🧩 **Sample Records (First 5 Rows)**
 
-**Key Insights:**
+| Time | V1        | V2        | V3       | V4        | V5        | V6        | V7        | V8        | V9        | ... | V28       | Amount | Class |
+| ---- | --------- | --------- | -------- | --------- | --------- | --------- | --------- | --------- | --------- | --- | --------- | ------ | ----- |
+| 0.0  | -1.359807 | -0.072781 | 2.536347 | 1.378155  | -0.338321 | 0.462388  | 0.239599  | 0.098698  | 0.363787  | ... | -0.021053 | 149.62 | 0     |
+| 0.0  | 1.191857  | 0.266151  | 0.166480 | 0.448154  | 0.060018  | -0.082361 | -0.078803 | 0.085102  | -0.255425 | ... | 0.014724  | 2.69   | 0     |
+| 1.0  | -1.358354 | -1.340163 | 1.773209 | 0.379780  | -0.503198 | 1.800499  | 0.791461  | 0.247676  | -1.514654 | ... | -0.059752 | 378.66 | 0     |
+| 1.0  | -0.966272 | -0.185226 | 1.792993 | -0.863291 | -0.010309 | 1.247203  | 0.237609  | 0.377436  | -1.387024 | ... | 0.061458  | 123.50 | 0     |
+| 2.0  | -1.158233 | 0.877737  | 1.548718 | 0.403034  | -0.407193 | 0.095921  | 0.592941  | -0.270533 | 0.817739  | ... | 0.215153  | 69.99  | 0     |
 
-* Severe **class imbalance (~0.17% fraud)**.
-* Transaction amounts are **right-skewed** (most transactions are small).
-* PCA-transformed features (`V1–V28`) ensure privacy.
+---
+
+### ⚖️ **Class Distribution**
+
+| Transaction Type  | Count   | Percentage |
+| ----------------- | ------- | ---------- |
+| **Non-Fraud (0)** | 284,315 | 99.83%     |
+| **Fraud (1)**     | 492     | 0.17%      |
+
+> ⚠️ This shows an **extreme class imbalance** — fraudulent transactions make up less than 0.2% of all data.
+> This imbalance heavily influences which metrics (AUC, Recall, F1-score) are meaningful during evaluation.
+
+---
+
+### 💰 **Transaction Amount Summary**
+
+| Statistic                | Value     |
+| ------------------------ | --------- |
+| **Count**                | 284,807   |
+| **Mean**                 | 88.35     |
+| **Standard Deviation**   | 250.12    |
+| **Minimum**              | 0.00      |
+| **25th Percentile (Q1)** | 5.60      |
+| **Median (Q2)**          | 22.00     |
+| **75th Percentile (Q3)** | 77.17     |
+| **Maximum**              | 25,691.16 |
+
+> 💡 Most transactions are **small (< €100)**, but a few large transactions (up to €25K) create a **right-skewed** distribution.
+> This will later justify **scaling** the `Amount` column using `StandardScaler()`.
+
+---
+
+### 🧠 **Key Insights**
+
+* The dataset is **highly imbalanced**, with only **0.17% fraud cases**.
+* All features except `Time` and `Amount` are **PCA-transformed**, preserving privacy.
+* The wide range in `Amount` values makes **feature scaling essential** before model training.
+* The imbalance implies that **accuracy alone** isn’t meaningful — we’ll rely on **AUC, Recall, and F1-score**.
 
 ---
 
