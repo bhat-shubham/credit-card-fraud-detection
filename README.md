@@ -289,7 +289,6 @@ This project emphasizes:
 * Using AUC, recall, and F1 as performance metrics
 * Handling class imbalance stratergically
 
-Author
-Project by: Charitha NL
-Dataset Source: Kaggle – Credit Card Fraud Detection (https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud)
-License: MIT
+**Author**
+ * **Project by**: Charitha NL
+ * **Dataset Source**: Kaggle – Credit Card Fraud Detection (https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud)
